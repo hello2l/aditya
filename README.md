@@ -46,7 +46,7 @@ def takeCommand():
         print(f"User said: {query}\n")
 
     except Exception as e:
-        # print(e)
+        
         print("Say that again please...")
         return "None"
     return query
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     # if 1:
         query = takeCommand().lower()
 
-        # Logic for executing tasks based on query
+        
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
