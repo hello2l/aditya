@@ -9,7 +9,7 @@ import pyaudio
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
-
+# print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
 
@@ -46,7 +46,7 @@ def takeCommand():
         print(f"User said: {query}\n")
 
     except Exception as e:
-        
+        # print(e)
         print("Say that again please...")
         return "None"
     return query
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     # if 1:
         query = takeCommand().lower()
 
-        
+        # Logic for executing tasks based on query
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
@@ -108,3 +108,15 @@ if __name__ == "__main__":
             except Exception as e:
                 print(e)
                 speak("Sorry my friend AADI bhai. I am not able to send this email")
+
+                if "open notepad" in query:
+                    npath = "C:\\Users\dell\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\Accessories\\notepad.exe"
+                    os.startfile(npath)
+
+                    if "open cmd" in query:
+                        os.system('start cmd')
+
+                        if "open chrome" in query:
+                            NPATH = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                            os.startfile(npath)
+                            
